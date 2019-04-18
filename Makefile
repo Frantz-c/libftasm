@@ -6,7 +6,7 @@
 #    By: mhouppin <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/02/25 16:43:57 by mhouppin     #+#   ##    ##    #+#        #
-#    Updated: 2019/04/12 13:54:10 by mhouppin    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/04/18 10:59:47 by mhouppin    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
@@ -18,6 +18,8 @@ OBJECTS 	:=$(SOURCES:src/%.s=obj/%.o)
 all: $(NAME)
 
 $(NAME): obj/ $(OBJECTS)
+
+libasm.so:
 	gcc -shared $(FLAGS) -o $@ $(OBJECTS)
 
 obj/:
