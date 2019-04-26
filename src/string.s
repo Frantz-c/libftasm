@@ -6,13 +6,14 @@
 ;    By: mhouppin <mhouppin@le-101.fr>              +:+   +:    +:    +:+      ;
 ;                                                  #+#   #+    #+    #+#       ;
 ;    Created: 2019/04/26 11:22:28 by mhouppin     #+#   ##    ##    #+#        ;
-;    Updated: 2019/04/26 11:36:28 by mhouppin    ###    #+. /#+    ###.fr      ;
+;    Updated: 2019/04/26 13:44:32 by mhouppin    ###    #+. /#+    ###.fr      ;
 ;                                                          /                   ;
 ;                                                         /                    ;
 ; **************************************************************************** ;
 
 section	.text
 	global	_ft_bzero
+	global	_ft_memchr
 	global	_ft_memcpy
 	global	_ft_memset
 
