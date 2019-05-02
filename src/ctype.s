@@ -6,7 +6,7 @@
 ;    By: mhouppin <mhouppin@le-101.fr>              +:+   +:    +:    +:+      ;
 ;                                                  #+#   #+    #+    #+#       ;
 ;    Created: 2019/05/02 11:16:40 by mhouppin     #+#   ##    ##    #+#        ;
-;    Updated: 2019/05/02 11:19:21 by mhouppin    ###    #+. /#+    ###.fr      ;
+;    Updated: 2019/05/02 11:25:36 by mhouppin    ###    #+. /#+    ###.fr      ;
 ;                                                          /                   ;
 ;                                                         /                    ;
 ; **************************************************************************** ;
@@ -17,6 +17,8 @@ section	.text
 	global	_ft_isascii
 	global	_ft_isdigit
 	global	_ft_isprint
+	global	_ft_tolower
+	global	_ft_toupper
 
 _ft_isalnum:
 		push		rbp
@@ -74,5 +76,25 @@ _ft_isprint:
 		cmp			edi,		85; (tilde - space, 126 - 32 = 84)
 		sbb			eax,		eax
 		and			eax,		1
+		pop			rbp
+		ret
+
+_ft_tolower:
+		push		rbp
+		mov			rbp,		rsp
+		lea			ecx,		[rdi - 65]
+		lea			eax,		[rdi + 32]
+		cmp			ecx,		26
+		cmovae		eax,		edi
+		pop			rbp
+		ret
+
+_ft_toupper:
+		push		rbp
+		mov			rbp,		rsp
+		lea			ecx,		[rdi - 97]
+		lea			eax,		[rdi - 32]
+		cmp			ecx,		26
+		cmovae		eax,		edi
 		pop			rbp
 		ret

@@ -6,7 +6,7 @@
 ;    By: mhouppin <mhouppin@le-101.fr>              +:+   +:    +:    +:+      ;
 ;                                                  #+#   #+    #+    #+#       ;
 ;    Created: 2019/04/26 11:22:28 by mhouppin     #+#   ##    ##    #+#        ;
-;    Updated: 2019/05/02 11:16:50 by mhouppin    ###    #+. /#+    ###.fr      ;
+;    Updated: 2019/05/02 11:46:28 by mhouppin    ###    #+. /#+    ###.fr      ;
 ;                                                          /                   ;
 ;                                                         /                    ;
 ; **************************************************************************** ;
@@ -17,7 +17,10 @@ section	.text
 	global	_ft_memset
 	global	_ft_strcat
 	global	_ft_strcpy
+	global	_ft_strdup
 	global	_ft_strlen
+
+	extern	_malloc
 
 _ft_bzero:
 		push		rbp
@@ -78,6 +81,25 @@ _ft_strcpy:
 		lea			rdx,		[rax + 1]
 		mov			rdi,		r10
 		mov			rsi,		r11
+		pop			r11
+		pop			r10
+		pop			rbp
+		jmp			_ft_memcpy
+
+_ft_strdup:
+		push		rbp
+		mov			rbp,		rsp
+		push		r10
+		push		r11
+		mov			r10,		rdi
+		call		_ft_strlen
+		inc			rax
+		mov			r11,		rax
+		mov			rdi,		rax
+		call		_malloc
+		mov			rdi,		rax
+		mov			rsi,		r10
+		mov			rdx,		r11
 		pop			r11
 		pop			r10
 		pop			rbp
