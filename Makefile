@@ -6,12 +6,12 @@
 #    By: mhouppin <marvin@le-101.fr>                +:+   +:    +:    +:+      #
 #                                                  #+#   #+    #+    #+#       #
 #    Created: 2019/02/25 16:43:57 by mhouppin     #+#   ##    ##    #+#        #
-#    Updated: 2019/04/26 11:29:09 by mhouppin    ###    #+. /#+    ###.fr      #
+#    Updated: 2019/05/02 10:34:26 by mhouppin    ###    #+. /#+    ###.fr      #
 #                                                          /                   #
 #                                                         /                    #
 # **************************************************************************** #
 
-NAME		:=libft.a
+NAME		:=libfts.a
 SOURCES 	:=$(wildcard src/*.s)
 OBJECTS 	:=$(SOURCES:src/%.s=obj/%.o)
 
